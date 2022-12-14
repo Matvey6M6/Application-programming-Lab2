@@ -3,7 +3,7 @@ import os
 import shutil
 
 
-def write_as_csv(path_to_dataset: str, paths_to_files: str):
+def write_as_csv(path_to_dataset: str, paths_to_files: str) -> None: 
     """Writes as CSV 
 
     Args:
@@ -81,7 +81,7 @@ def get_paths_to_files(path_to_dataset: str) -> str:
 
 if __name__ == '__main__':
 
-    path_to_dataset = os.path.abspath("../application_programming_first_lab_and_dataset/dataset")
+    path_to_dataset = os.path.join("C:/Users/User/Desktop/Lab2/","application_programming_first_lab_and_dataset/dataset")
     paths_to_files = get_paths_to_files(path_to_dataset)
 
     new_dataset_path = copy_dataset(path_to_dataset)

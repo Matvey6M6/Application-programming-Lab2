@@ -12,7 +12,7 @@ class Comment:
         self.mark = None
 
 
-def create_repo():
+def create_repo() -> None:
     """Creates repository in current folder
     """
     os.mkdir("dataset_copy")
@@ -20,7 +20,7 @@ def create_repo():
         os.mkdir("dataset_copy/"+str(i))
 
 
-def save_comments(data: Comment, foldername: str):
+def save_comments(data: Comment, foldername: str) -> None:
     """Saves comments give
 
     Args:
@@ -45,7 +45,7 @@ def save_comments(data: Comment, foldername: str):
         used_digits.append(digit)
 
 
-def write_dataset(dataset: str):
+def write_dataset(dataset: str) -> None:
     """Writes dataset
 
     Args:
@@ -67,7 +67,7 @@ def write_dataset(dataset: str):
     save_comments(five_data, "dataset_copy/5")
 
 
-def create_copy(path: str):
+def create_copy(path: str) -> None:
     """Creates copy of dataset
 
     Args:
@@ -157,7 +157,7 @@ def get_paths_to_files(path_to_dataset: str)-> str:
     return paths_to_files
 
 
-def write_as_csv(path_to_dataset: str, paths_to_files: str):
+def write_as_csv(path_to_dataset: str, paths_to_files: str) -> None:
     """Writes all data as CSV
 
     Args:
