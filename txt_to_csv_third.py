@@ -134,7 +134,7 @@ def get_dataset(path: str) -> Comment:
     return dataset
 
 
-def get_paths_to_files(path_to_dataset: str)-> str:
+def get_paths_to_files(path_to_dataset: str) -> str:
     """Reads paths to files in dataset
 
     Args:
@@ -176,7 +176,7 @@ def write_as_csv(path_to_dataset: str, paths_to_files: str) -> None:
 
 if __name__ == '__main__':
 
-    path_to_dataset = os.path.abspath("../application_programming_first_lab_and_dataset/dataset")
+    path_to_dataset = os.path.join( 'application_programming_first_lab_and_dataset','dataset')
 
     create_copy(path_to_dataset)
 

@@ -20,7 +20,7 @@ def write_as_csv(path_to_dataset: str, paths_to_files: str) -> None:
                               f'../application_programming_first_lab_and_dataset/dataset{path}', f'{path[1]}'])
 
 
-def mk_newdataset(nd_path: str):
+def mk_newdataset(nd_path: str) -> None:
     """creates new dataset
 
     Args:
@@ -67,7 +67,7 @@ def get_paths_to_files(path_to_dataset: str) -> str:
     paths_to_files = list()
 
     for folder_num in range(1, 6):
-        folder_path = path_to_dataset+'/'+str(folder_num)
+        folder_path = 'C:\\' + path_to_dataset+'\\'+str(folder_num)
         num_of_files = sum(os.path.isfile(os.path.join(folder_path, f))
                            for f in os.listdir(folder_path)) + 1
 
@@ -81,7 +81,7 @@ def get_paths_to_files(path_to_dataset: str) -> str:
 
 if __name__ == '__main__':
 
-    path_to_dataset = os.path.join("C:/Users/User/Desktop/Lab2/","application_programming_first_lab_and_dataset/dataset")
+    path_to_dataset = os.path.join( 'application_programming_first_lab_and_dataset','dataset')
     paths_to_files = get_paths_to_files(path_to_dataset)
 
     new_dataset_path = copy_dataset(path_to_dataset)

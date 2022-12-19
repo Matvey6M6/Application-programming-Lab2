@@ -14,7 +14,7 @@ def write_as_csv(paths_to_files: str) -> None:
         for i in range(0, len(paths_to_files)):
             #print(f'../{paths_to_files[i][22::]}')
             csv_file.writerow([f'{paths_to_files[i]}',
-                              f'../{paths_to_files[i][22::]}', f'{paths_to_files[i][-10]}'])
+                              f'..\{paths_to_files[i][22::]}', f'{paths_to_files[i][-10]}'])
 
 
 def get_paths_to_files(path_to_dataset: str) -> str:
@@ -30,12 +30,12 @@ def get_paths_to_files(path_to_dataset: str) -> str:
 
     for folder_num in range(1, 6):
         
-        folder_path = path_to_dataset+'/'+str(folder_num)
+        folder_path = path_to_dataset + '\\' + str(folder_num)
         num_of_files = sum(os.path.isfile(os.path.join(folder_path, f))
                            for f in os.listdir(folder_path)) + 1
 
         for file_num in range(1, num_of_files):
-            path_to_file = path_to_dataset + folder_path+f'/{(file_num):04}'+'.txt'
+            path_to_file = path_to_dataset + folder_path+f'\{(file_num):04}'+'.txt'
             paths_to_files.append(path_to_file[len(path_to_dataset):])
 
     return paths_to_files
@@ -43,7 +43,7 @@ def get_paths_to_files(path_to_dataset: str) -> str:
 
 if __name__ == '__main__':
 
-    path_to_dataset = os.path.join("C:/Users/User/Desktop/Lab2/","application_programming_first_lab_and_dataset/dataset")
+    path_to_dataset = os.path.join( 'application_programming_first_lab_and_dataset','dataset')
     paths_to_files = get_paths_to_files(path_to_dataset)
 
     write_as_csv(paths_to_files)
